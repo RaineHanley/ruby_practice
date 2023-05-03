@@ -14,7 +14,7 @@
 # puts "I want the #{item1[:color]} cup. "
 # puts "But the #{item2[:color]}  is cooler"
 
-class Cup
+class Item
   attr_reader :color, :size, :price
   attr_writer :stocked
 
@@ -45,10 +45,19 @@ class Cup
   end
 end
 
-cup1 = Cup.new({ color: "blue", price: "$1", size: "small" })
-cup2 = Cup.new ({ color: "red", price: "$3", size: "medium" })
-cup3 = Cup.new ({ color: "green", price: "$6", size: "large" })
+cup1 = Item.new({ color: "blue", price: "$1", size: "small" })
+cup2 = Item.new ({ color: "red", price: "$3", size: "medium" })
+cup3 = Item.new ({ color: "green", price: "$6", size: "large" })
 cup1.print_info
 cup1.stocked = true
 # p.color = "blue"
 # p.price = "$6"
+
+class Food < Item
+  def initialize(input_options)
+    super
+    @shelf_life = input_options
+  end
+end
+
+p
