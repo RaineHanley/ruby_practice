@@ -13,13 +13,15 @@ require "pstore"
 # table = Terminal::Table.new :headings => ["first_name", "last_name", "salary", "active"], :rows => rows
 # p table
 rows = []
-rows << ["first_name", "last_name"]
-rows << ["Saron", "Yitberek", 100000, true]
-rows << ["Danilo", 3]
+rows << ["1", "Saron", "Yitberek", 100000, true]
+rows << ["2", "Danilo", "Campos", 70000, true]
+rows << []
 table = Terminal::Table.new :rows => rows
 
 # puts table
 
 table = Terminal::Table.new :headings => ["id", "first_name", "last_name", "salary", "active"], :rows => rows
+
+table = Terminal::Table.new :title => "Employees", :headings => ["Word", "Number"], :rows => rows
 
 puts table

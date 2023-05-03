@@ -45,13 +45,15 @@ class Item
   end
 end
 
-cup1 = Item.new({ color: "blue", price: "$1", size: "small" })
-cup2 = Item.new ({ color: "red", price: "$3", size: "medium" })
-cup3 = Item.new ({ color: "green", price: "$6", size: "large" })
-cup1.print_info
-cup1.stocked = true
-# p.color = "blue"
-# p.price = "$6"
+# cup1 = Item.new({ color: "blue", price: "$1", size: "small" })
+# cup2 = Item.new ({ color: "red", price: "$3", size: "medium" })
+# cup3 = Item.new ({ color: "green", price: "$6", size: "large" })
+# cup1.print_info
+# cup1.stocked = true
+# # p.color = "blue"
+# # p.price = "$6"
+require "terminal-table"
+require "pstore"
 
 class Food < Item
   def initialize(input_options)
@@ -60,4 +62,16 @@ class Food < Item
   end
 end
 
-p
+rows = []
+rows << ["cup1", "blue", "small", 100000, true]
+rows << ["cup2", "Danilo", "Campos", 70000, true]
+rows << ["cup3", "green", "large"]
+table = Terminal::Table.new :rows => rows
+
+# puts table
+
+table = Terminal::Table.new :headings => ["color", "size", "price", " stocked", "active"], :rows => rows
+
+table = Terminal::Table.new :title => "Cups at the Cup Store", :headings => ["Cup number", "Color", "Size", "Price"], :rows => rows
+
+puts table
