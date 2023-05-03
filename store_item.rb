@@ -63,15 +63,15 @@ class Food < Item
 end
 
 rows = []
-rows << ["cup1", "blue", "small", 100000, true]
-rows << ["cup2", "Danilo", "Campos", 70000, true]
-rows << ["cup3", "green", "large"]
+rows << ["cup1", "blue", "small", "$1", true]
+rows << ["cup2", "red", "medium", "$3", true]
+rows << ["cup3", "green", "large", "$6", false]
 table = Terminal::Table.new :rows => rows
 
 # puts table
 
-table = Terminal::Table.new :headings => ["color", "size", "price", " stocked", "active"], :rows => rows
+# table = Terminal::Table.new :headings => ["color", "size", "price", " stocked"], :rows => rows
 
-table = Terminal::Table.new :title => "Cups at the Cup Store", :headings => ["Cup number", "Color", "Size", "Price"], :rows => rows
+table = Terminal::Table.new :title => "Cups at the Cup Store", :headings => ["Cup number", "Color", "Size", "Price", "In stock?"], :rows => rows
 
 puts table
