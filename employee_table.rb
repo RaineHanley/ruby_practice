@@ -22,6 +22,14 @@ table = Terminal::Table.new :rows => rows
 
 table = Terminal::Table.new :headings => ["id", "first_name", "last_name", "salary", "active"], :rows => rows
 
-table = Terminal::Table.new :title => "Employees", :headings => ["Word", "Number"], :rows => rows
+table = Terminal::Table.new :title => "Employees", :headings => ["Id", "First_name", "Last_name", "Salary", "Active"], :rows => rows
 
+puts "[C]reate [R]ead [U]pdate [Q]uit"
+
+user_input = gets.chomp
+if user_input = "C".downcase
+  puts "first_name"
+  first_name = gets.chomp
+  t.add_row [first_name]
+end
 puts table
